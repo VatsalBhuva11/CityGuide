@@ -43,7 +43,7 @@ backend/node_modules/
 node_modules/
 jspm_packages/
 
-# Snowpack dependency directory (https://snowpack.dev/)
+# Snowpack dependency directory (https://sno    wpack.dev/)
 web_modules/
 
 # TypeScript cache
