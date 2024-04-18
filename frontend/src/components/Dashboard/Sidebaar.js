@@ -8,7 +8,7 @@ const Sidebar = () => {
         <ul>
           <li className="py-3 border-b border-purple-300 flex flex-col justify-center items-center">
             <div className=' w-24 object-contain my-3 '>
-             <img src={image} className='rounded-full'></img>
+             <img src={image} className='rounded-full cursor-pointer'></img>
              </div>
             <a href="#" className="text-purple-700  flex font-bold text-[26px] items-center px-12 hover:px-7">
               Czleen
