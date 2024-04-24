@@ -43,7 +43,7 @@ export const register=async (req,res)=>{
       .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        console.log("Aala re aala\n");
+
         console.log(user);
         UID=user.uid;
         accessToken=user.accessToken;
@@ -72,7 +72,7 @@ export const login=async (req,res)=>{
       const user = userCredential.user;
       console.log("Signed in into\n With access token:");
       console.log(user.accessToken);
-    //   res.status(200).send(`${user.accessToken}`);
+      res.status(200).send({accessToken:[user.accessToken]});
       // ...
     })
     .catch((error) => {

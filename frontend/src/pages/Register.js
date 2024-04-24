@@ -86,9 +86,10 @@
 
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import image from '../components/Assets/travel.jpg'
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [firstName, setFirstName] = useState('');
@@ -97,6 +98,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -131,6 +133,7 @@ const Register = () => {
       console.error('Error:', error.response.data);
     }
     console.log("ghussa");
+    navigate(`/dashboard`);
   };
 
   return (
