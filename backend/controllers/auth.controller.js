@@ -21,6 +21,9 @@ admin.initializeApp({
 export const register=async (req,res)=>{
     console.log("entered register")
     const {email, password}={...req.body.user};
+    const user1={
+        email,password
+    }
     const loginZodObject = zod.object({
         email: zod.string().email(),
         password: zod.string().min(6).regex(/.*[!@#$%^&*()_-].*/)
