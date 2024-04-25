@@ -16,6 +16,7 @@ function App() {
         <Route path="/blogs" element={<Blog />}></Route>
         <Route path="/blog" element={<OpenBlog />}></Route>
         <Route path="/newBlog" element={<NewBlog/>}></Route>
+        <Route path="/user/itenary" ></Route>
       </Routes>
     </BrowserRouter>
   );
