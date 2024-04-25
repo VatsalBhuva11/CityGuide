@@ -1,0 +1,39 @@
+[
+    {
+        "src":"destination-1.jpg",
+        "text":"Budapest, Hungary",
+        "label":"Europe",
+        "path":"/places"
+    },
+    {
+        "src":"destination-2.jpg",
+        "text":"Lisbon, Portugal",
+        "label":"Europe",
+        "path":"Europe"
+    },
+    {
+        "src":"destination-3.jpg",
+        "text":"Berlin, Germany",
+        "label":"Europe",
+        "path":"/places"
+    },
+    {
+        "src":"destination-4.jpg",
+        "text":"London, England",
+        "label":"Europe",
+        "path":"/places"
+    },
+    {
+        "src":"destination-5.jpg",
+        "text":"Delft, Holland",
+        "label":"Europe",
+        "path":"/places"
+    }
+]
+
+
+
+  
+
+
+
