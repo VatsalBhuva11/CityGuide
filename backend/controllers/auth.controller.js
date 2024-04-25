@@ -47,7 +47,6 @@ export const register=async (req,res)=>{
       .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-
         console.log(user);
         UID=user.uid;
         accessToken=user.accessToken;
@@ -93,7 +92,7 @@ export const Authentication=(req,res)=>{
           .then(decodedToken => {
             req.uid = decodedToken.uid;
             const uidd=req.uid;
-            // res.status(200).send({uidd})
+            res.status(200).send({uidd})
           })
           .catch(error => {
             console.error('Error verifying token:', error);
