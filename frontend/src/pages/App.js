@@ -4,6 +4,9 @@ import Register from "./Register";
 import Login from "./Login";
 import City from "./City";
 import Places from "./Places";
+import Blog from "./Blog";
+import OpenBlog from "./OpenBlog";
+import NewBlog from "./NewBlog";
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
         <Route path="/user/itenary"></Route>
         <Route path="/places" element={<Places />} />
         <Route path="/city" element={<City />} />
+        <Route path="/blogs" element={<Blog />}></Route>
+        <Route path="/blog" element={<OpenBlog />}></Route>
+        <Route path="/newBlog" element={<NewBlog/>}></Route>
+        <Route path="/user/itenary" ></Route>
       </Routes>
     </BrowserRouter>
   );

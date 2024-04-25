@@ -21,4 +21,19 @@ export const createUser = async (req, res) => {
     }
 };
 
+export const findUserByUID = async (req, res) => {
+    const { uid } = req.body; // Assuming UID is passed as a route parameter  
+    try {
+        const user = await User.findOne({ UID: uid });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        console.log(user);
+        res.status(200).json(user);
+    } catch (error) {
+        console.error('Error finding user:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
 
