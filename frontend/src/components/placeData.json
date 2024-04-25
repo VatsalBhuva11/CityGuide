@@ -1,0 +1,34 @@
+[
+    {
+        "src":"img-9.jpg",
+        "text":"Explore the hidden waterfall deep inside the Amazon Jungle",
+        "label":"Adventure"
+    },
+    {
+        "src":"img-2.jpg",
+              "text":"Travel through the Islands of Bali in a Private Cruise",
+              "label":"Luxury"
+    },
+    {
+        "src":"img-4.jpg",
+              "text":"Experience Football on Top of the Himalayan Mountains",
+              "label":"Adventure"
+    },
+    {
+        "src":"img-3.jpg",
+              "text":"Set a Sail in the Atlantic ocean visiting Uncharted Waters",
+              "label":"Mystery"
+    },
+    {
+        "src":"img-8.jpg",
+              "text":"Ride through the Sahara Desert on a guided camel tour",
+              "label":"Adrenaline"
+    }
+]
+
+
+
+  
+
+
+
