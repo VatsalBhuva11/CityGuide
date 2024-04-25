@@ -1,6 +1,6 @@
 //Mongo Config
 import mongoose from "mongoose";
-export const mongooseConfig=`mongodb://JatinOO7-py:98216841%40123@ac-fuqumtw-shard-00-00.ogbpgkq.mongodb.net:27017,ac-fuqumtw-shard-00-01.ogbpgkq.mongodb.net:27017,ac-fuqumtw-shard-00-02.ogbpgkq.mongodb.net:27017/?ssl=true&replicaSet=atlas-3lgdkw-shard-0&authSource=admin&retryWrites=true&w=majority&appName=CityTour`
+export const mongooseConfig=`mongodb://127.0.0.1:27017/cityGuide`;
 
 
 

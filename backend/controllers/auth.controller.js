@@ -5,6 +5,8 @@ import { getApp } from "firebase/app";
 import { firebaseConfig } from "../config.js";
 import zod from "zod";
 import pkg from 'firebase-admin';
+import { fileURLToPath } from 'url';
+import path from 'path';
 const admin=pkg;
 
 // Initialize Firebase
@@ -14,8 +16,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 //Initialize Admin in order to authenticate use just the access tokens
+const __filename = fileURLToPath(import.meta.url);
+const serviceAccountPath = path.join(path.dirname(__filename), 'ServiceAcct.json');
 admin.initializeApp({
-  credential: admin.credential.cert('/Users/deepaksoni/Downloads/cityTourMain/CityGuide/backend/controllers/ServiceAcct.json')
+  credential: admin.credential.cert(serviceAccountPath)
 });
 
 export const register=async (req,res)=>{
