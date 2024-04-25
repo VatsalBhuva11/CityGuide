@@ -1,33 +1,15 @@
 [
     {
-        "src":"destination-1.jpg",
-        "text":"Budapest, Hungary",
-        "label":"Europe",
+        "src":"dubai.jpeg",
+        "text":"Dubai, UAE",
+        "label":"Middle East",
         "path":"/places"
     },
     {
-        "src":"destination-2.jpg",
-        "text":"Lisbon, Portugal",
-        "label":"Europe",
+        "src":"abu-dhabi.jpeg",
+        "text":"Abu Dhabi, UAE",
+        "label":"Middle East",
         "path":"Europe"
-    },
-    {
-        "src":"destination-3.jpg",
-        "text":"Berlin, Germany",
-        "label":"Europe",
-        "path":"/places"
-    },
-    {
-        "src":"destination-4.jpg",
-        "text":"London, England",
-        "label":"Europe",
-        "path":"/places"
-    },
-    {
-        "src":"destination-5.jpg",
-        "text":"Delft, Holland",
-        "label":"Europe",
-        "path":"/places"
     }
 ]
 

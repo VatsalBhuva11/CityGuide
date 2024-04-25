@@ -13,7 +13,11 @@ export function CardItem(props) {
     <Card className="mt-6 w-96 m-10">
       <Link to={props.path}>
         <CardHeader color="blue-gray" className="relative h-56">
-          <img src={`images/${props.src}`} alt="card-image" />
+          <img
+            className="w-full"
+            src={`images/${props.src}`}
+            alt="card-image"
+          />
         </CardHeader>
         <CardBody>
           <Typography>{props.text}</Typography>
