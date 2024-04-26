@@ -9,6 +9,8 @@ import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import img2 from "../components/img-2.jpeg";
+import img4 from "../components/img-4.jpeg";
 
 const Home = () => {
     const [show, setshow] = useState(false);
@@ -133,26 +135,51 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div className="mb-10">
-                    <h1 className="font-bold text-4xl py-2">Know About Us</h1>
-                    <p>
-                        This website serves as a comprehensive city tour guide,
-                        offering travelers personalized recommendations and
-                        insights to enhance their exploration experiences.
-                        Seamlessly integrating data from various sources like
-                        Google Maps and booking platforms, it assists users in
-                        selecting accommodations based on their preferences and
-                        ethnicity, while also providing detailed information
-                        about local attractions and public transportation
-                        options. Through testimonials from locals and a vibrant
-                        blogging community, visitors gain authentic insights and
-                        valuable tips, enriching their understanding of their
-                        chosen destination. Whether planning a vacation or
-                        seeking inspiration for their next adventure, this
-                        website offers a user-friendly interface and a wealth of
-                        information to cater to diverse travel needs.
-                    </p>
-                </div>
+
+                <section class="bg-white dark:bg-gray-900">
+                    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                        <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                                Know About Us
+                            </h2>
+                            <p class="mb-4">
+                                This website serves as a comprehensive city tour
+                                guide, offering travelers personalized
+                                recommendations and insights to enhance their
+                                exploration experiences. Seamlessly integrating
+                                data from various sources like Google Maps and
+                                booking platforms, it assists users in selecting
+                                accommodations based on their preferences and
+                                ethnicity, while also providing detailed
+                                information about local attractions and public
+                                transportation options.
+                            </p>
+                            <p>
+                                Through testimonials from locals and a vibrant
+                                blogging community, visitors gain authentic
+                                insights and valuable tips, enriching their
+                                understanding of their chosen destination.
+                                Whether planning a vacation or seeking
+                                inspiration for their next adventure, this
+                                website offers a user-friendly interface and a
+                                wealth of information to cater to diverse travel
+                                needs.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <img
+                                class="w-full rounded-lg"
+                                src={img2}
+                                alt="office content 1"
+                            />
+                            <img
+                                class="mt-4 w-full lg:mt-10 rounded-lg"
+                                src={img4}
+                                alt="office content 2"
+                            />
+                        </div>
+                    </div>
+                </section>
                 <Footer />
             </div>
         </div>
