@@ -34,6 +34,9 @@ wss.on("connection", (socket) => {
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
         try {
+            prompt =
+                prompt +
+                ". Give answer only in plain text without any formatting like bold, underline, bullets points. For new line text, use a comma instead of newline";
             const result = await model.generateContentStream(prompt);
             console.log("Going to run");
             for await (const chunk of result.stream) {
