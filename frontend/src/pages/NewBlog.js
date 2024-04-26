@@ -5,6 +5,13 @@ import Footer from '../components/Footer';
 import parse from 'html-react-parser';
 
 const NewBlog = () => {
+  const [title,setTitle] = useState('New Blog');
+  const [city,setCity] = useState('Select City');
+  const [newBlog,setBlog] = useState({
+    title:'Dubai Blog',
+    description:'Dubai is a place full of wonders',
+    city:'dubai'
+  });
   const editorRef = useRef(null);
   const [content, setContent] = useState("");
   const log = () => {
@@ -13,6 +20,13 @@ const NewBlog = () => {
       setContent(editorRef.current.getContent());
     }
   };
+  console.log(content);
+  const handleSelectChange = (event) => {
+    //console.log(event.target.value);
+    setCity(event.target.value); 
+  };
+  //console.log(title);
+
   
   return (
     <div >
@@ -23,6 +37,17 @@ const NewBlog = () => {
       </div> 
   <div className='flex justify-center'>
   <div className='w-1/2 flex flex-col'>
+
+  <select id="dropdown" onChange={handleSelectChange} className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-4'>
+      <option className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'>Select City</option>
+      <option value="Dubai" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'>Dubai</option>
+      <option value="Abu Dhabi" className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'>Abu Dhabi</option>
+  </select>
+
+  <div class="mb-6">
+    <label for="blog-title" class="block mb-2 text-2xl font-bold text-gray-900 dark:text-white">Blog Title</label>
+    <input onChange={(event)=>setTitle(event.target.value)} type="text" id="blog-title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 my-4" placeholder='Enter Your Title' />
+</div>
     <Editor
         apiKey='c8314dncok6trnwwdf99d0demq44vwzpk4rt7bt5ggedtugx'
         onInit={(_evt, editor) => editorRef.current = editor}
@@ -47,7 +72,6 @@ content_css: "dark"
 
         }}
       />
-
 <button type="button" className=" mt-4 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 ">Submit Post</button>
 </div>
 <div>
