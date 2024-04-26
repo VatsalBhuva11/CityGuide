@@ -22,9 +22,6 @@ export function CardItem(props) {
         <CardBody>
           <Typography>{props.text}</Typography>
         </CardBody>
-        {/* <CardFooter className="pt-0">
-          <Button>Read More</Button>
-        </CardFooter> */}
       </Link>
     </Card>
   );

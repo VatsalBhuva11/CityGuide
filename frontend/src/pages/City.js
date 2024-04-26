@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CardItem from "../components/CardItem";
 import cityData from "../components/cityData.json";
 
 const City = () => {
-  console.log();
-  useEffect(() => {
-    //Fetching data from db
-  }, []);
   return (
     <div className="bg-gray-900">
       <h1 className="text-6xl text-center my-5 text-red-950">Cities</h1>

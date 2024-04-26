@@ -12,11 +12,13 @@ import Blog2 from "./Blog2";
 import Blog3 from "./Blog3";
 import Blog4 from "./Blog4";
 import Itenary from "./Itenary";
+import Home from "./Home";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<DashBoard />}></Route>
                 <Route path="/register" element={<Register />}></Route>
                 <Route path="/login" element={<Login />}></Route>
@@ -29,7 +31,8 @@ function App() {
                 <Route path="/blog/3" element={<Blog3 />}></Route>
                 <Route path="/blog/4" element={<Blog4 />}></Route>
                 <Route path="/newBlog" element={<NewBlog />}></Route>
-                <Route path="/user/itenary" element={<Itenary/>} ></Route>
+                <Route path="/user/itenary" element={<Itenary />} />
+
             </Routes>
         </BrowserRouter>
     );
