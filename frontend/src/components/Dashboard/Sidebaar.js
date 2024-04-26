@@ -17,12 +17,12 @@ const Sidebar = ({user, setClicked}) => {
             </a>
             <div className=' text-sm my-1 text-purple-500'>{user.email}</div>
           </li>
-          <li className="py-3 border-b border-purple-300 flex justify-center" onClick={()=>{setClicked(1);}}>
+          <li className="py-3 border-b border-purple-300 flex justify-center" onClick={()=>{setClicked(1);navigate('/user/itenary')}}>
             <a href="#" className="text-purple-700 hover:font-semibold flex items-center px-8 hover:px-7 ">
-              My Itenaries
+              Create Itinerary
             </a>
           </li>
-          <li className="py-3 border-b border-purple-300 flex justify-center" onClick={()=>{setClicked(2)}}>
+          <li className="py-3 border-b border-purple-300 flex justify-center" onClick={()=>{setClicked(2);}}>
             <a href="#" className="text-purple-700 hover:font-semibold flex items-center px-20 hover:px-[78px]">
               Saved Itenaries
             </a>

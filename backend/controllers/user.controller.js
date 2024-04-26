@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { mongooseConfig } from "../config.js";
 import { User } from "../models/User.js";
 
+<<<<<<< Updated upstream
 mongoose
     .connect(mongooseConfig)
     .then((con) => {
@@ -9,6 +10,13 @@ mongoose
         console.log("MongoDB Connect Sucessfull");
     })
     .catch((err) => console.log(err));
+=======
+mongoose.connect(mongooseConfig)
+.then(con=>{
+    // console.log(con.connections);
+    console.log("MongoDB Connect Sucessfull");
+}).catch(err=>console.log(err));
+>>>>>>> Stashed changes
 
 export const createUser = async (req, res) => {
     try {
