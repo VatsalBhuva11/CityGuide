@@ -54,7 +54,7 @@ content_css: "dark"
 </div>    
 </div>
 </section>
-{/* <Footer/> */}
+<Footer/>
     </div>
   );
 }
