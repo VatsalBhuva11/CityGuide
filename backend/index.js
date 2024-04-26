@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import router from "./routes/index.js"
 import morgan from "morgan";
+import blogRouter from "./routes/blogs.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
     res.status(200).json({ message: "OK" });
 });
 app.use("/api",router);
+app.use("/api/blogs",blogRouter);
 const PORT = process.env.PORT || 7001;
 app.listen(PORT, function () {
     console.log(`Server is running on port ${PORT}! 🚀`);
