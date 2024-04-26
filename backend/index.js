@@ -25,8 +25,13 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 app.get("/", (req, res) => {
     res.status(200).json({ message: "OK" });
 });
+<<<<<<< Updated upstream
 app.use("/api", router);
 app.use("/api/blogs", blogRouter);
+=======
+app.use("/api",router);
+app.use("/api/blogs",blogRouter);
+>>>>>>> Stashed changes
 const PORT = 7001;
 
 wss.on("connection", (socket) => {

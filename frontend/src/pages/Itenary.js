@@ -12,39 +12,7 @@ const Itenary = () => {
     const [item, setItem] = useState({});
     const [citySelected, setCitySelected] = useState("");
     const token = localStorage.getItem("token");
-    const [itenaryResult, setResult] = useState([
-        {
-            cityName: "Dubai",
-            places: [
-                { itemName: "Burj Khalifa" },
-                { itemName: "Dubai Mall" },
-                { itemName: "Global Village" },
-                { itemName: "Palm Jumeirah" },
-            ],
-        },
-        {
-            cityName: "Abu Dhabi",
-            places: [
-                { itemName: "Ferrari World" },
-                { itemName: "Yas Waterworld" },
-                { itemName: "Marina Mall" },
-            ],
-        },
-    ]);
-
-    function itenaryResultFilled(iti) {
-        const final = [
-            {
-                cityName: "Dubai",
-                places: [],
-            },
-        ];
-        iti.map((obj) => {
-            obj.Dubai.map((value) => final[0].places.push({ itemName: value }));
-        });
-        setResult(final);
-    }
-
+    
     function checkCityClicked(e) {
         if (e.target.value === "Add a city") return;
         setCitySelected(e.target.value); //mark current city
@@ -88,7 +56,6 @@ const Itenary = () => {
     }
 
     function addItem() {
-        itenaryResultFilled(itenary);
         (async () => {
             let response;
             response = await axios.post(
@@ -103,7 +70,7 @@ const Itenary = () => {
             console.log(response.data.uidd);
             const requestBody = {
                 UID: `${response.data.uidd}`,
-                items: [...itenaryResult],
+                items: itenary,
             };
             const response2 = await axios.post(
                 "http://localhost:7001/api/itenary/createItenary",
