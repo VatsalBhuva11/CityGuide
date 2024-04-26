@@ -56,6 +56,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<DashBoard />}></Route>
+<<<<<<< Updated upstream
                     <Route path="/register" element={<Register />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/places" element={<Places />} />
@@ -134,6 +135,22 @@ function App() {
                 )}
             </div>
         </div>
+=======
+                <Route path="/register" element={<Register />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/places" element={<Places />} />
+                <Route path="/city" element={<City />} />
+                <Route path="/blogs" element={<Blog />}></Route>
+                <Route path="/blog" element={<OpenBlog />}></Route>
+                <Route path="/blog/1" element={<Blog1 />}></Route>
+                <Route path="/blog/2" element={<Blog2 />}></Route>
+                <Route path="/blog/3" element={<Blog3 />}></Route>
+                <Route path="/blog/4" element={<Blog4 />}></Route>
+                <Route path="/newBlog" element={<NewBlog />}></Route>
+                <Route path="/user/itenary" element={<Itenary/>}></Route>
+            </Routes>
+        </BrowserRouter>
+>>>>>>> Stashed changes
     );
 }
 

@@ -14,9 +14,15 @@ export function CardItem(props) {
       <Link to={props.path}>
         <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
           <img
+<<<<<<< Updated upstream
             className="absolute inset-0 h-full w-full object-cover"
             src={`images/${props.src}`}
             alt="University of Southern California"
+=======
+            className="w-full"
+            src={`../Assets/${props.src}`}
+            alt="card-image"
+>>>>>>> Stashed changes
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
 
