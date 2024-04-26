@@ -9,7 +9,7 @@ const City = () => {
             <h1 className="text-6xl pt-4 flex justify-center items-center text-center text-white">
                 Cities
             </h1>
-            <div className="flex justify-center items-center w-screen">
+            <div className="flex gap-4 justify-center items-center w-screen">
                 {cityData.map((value) => (
                     <CardItem
                         src={value.src}

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export function CardItem(props) {
     return (
-        <div>
+        <div className="h-400 w-[40%]">
             <Link to={props.path}>
                 <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
                     <img

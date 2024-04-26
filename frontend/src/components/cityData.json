@@ -1,21 +1,14 @@
     [
-    {
-        "src":"Dubai.jpg",
-        "text":"Dubai, UAE",
-        "label":"Middle East",
-        "path":"/places?city=dubai"
-    },
-    {
-        "src":"Abu-Dhabi.jpg",
-        "text":"Abu Dhabi, UAE",
-        "label":"Middle East",
-        "path":"/places?city=abd"
-    }
-]
-
-
-
-  
-
-
-
+        {
+            "src": "Dubai.jpg",
+            "text": "Dubai, UAE",
+            "label": "Middle East",
+            "path": "/places?city=dubai"
+        },
+        {
+            "src": "Abu-Dhabi.jpg",
+            "text": "Abu Dhabi, UAE",
+            "label": "Middle East",
+            "path": "/places?city=abd"
+        }
+    ]

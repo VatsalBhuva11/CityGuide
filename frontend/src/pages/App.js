@@ -12,6 +12,7 @@ import Blog2 from "./Blog2";
 import Blog3 from "./Blog3";
 import Blog4 from "./Blog4";
 import Itenary from "./Itenary";
+import DraftItenary from "./DraftItenary";
 import chatSvg from "../components/chat.svg";
 import wrongSvg from "../components/wrong.svg";
 import logoSvg from "../components/logo.svg";
@@ -68,6 +69,10 @@ function App() {
                     <Route path="/blog/4" element={<Blog4 />}></Route>
                     <Route path="/newBlog" element={<NewBlog />}></Route>
                     <Route path="/user/itenary" element={<Itenary />} />
+                    <Route
+                        path="/user/itenary/draft"
+                        element={<DraftItenary />}
+                    />
                 </Routes>
             </BrowserRouter>
             <div className="fixed bottom-10 right-10 flex flex-col justify-center items-center">
