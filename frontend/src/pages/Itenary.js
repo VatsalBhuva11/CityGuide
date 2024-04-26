@@ -14,20 +14,20 @@ const Itenary = () => {
     const token = localStorage.getItem("token");
     const [itenaryResult, setResult] = useState([
         {
-            cityName: "'Dubai'",
+            cityName: "Dubai",
             places: [
-                { itemName: "'Burj Khalifa'" },
-                { itemName: "'Dubai Mall'" },
-                { itemName: "'Global Village'" },
-                { itemName: "'Palm Jumeirah'" },
+                { itemName: "Burj Khalifa" },
+                { itemName: "Dubai Mall" },
+                { itemName: "Global Village" },
+                { itemName: "Palm Jumeirah" },
             ],
         },
         {
-            cityName: "'Abu Dhabi'",
+            cityName: "Abu Dhabi",
             places: [
-                { itemName: "'Ferrari World'" },
-                { itemName: "'Yas Waterworld'" },
-                { itemName: "'Marina Mall'" },
+                { itemName: "Ferrari World" },
+                { itemName: "Yas Waterworld" },
+                { itemName: "Marina Mall" },
             ],
         },
     ]);
@@ -35,7 +35,7 @@ const Itenary = () => {
     function itenaryResultFilled(iti) {
         const final = [
             {
-                cityName: "'Dubai'",
+                cityName: "Dubai",
                 places: [],
             },
         ];
@@ -49,20 +49,18 @@ const Itenary = () => {
         if (e.target.value === "Add a city") return;
         setCitySelected(e.target.value); //mark current city
         let newItem = {};
-        newItem[e.target.value] = []; //new city
+        newItem.cityName = e.target.value;
+        newItem.places = [];
 
         setItem(newItem);
         console.log("item: ", newItem);
         console.log("itenary length: ", itenary.length);
-        console.log("cityselected array: ", newItem[citySelected]);
+        console.log("cityselected array: ", newItem["cityName"]);
 
         let iteLen = itenary.length;
-        if (iteLen > 0 && Object.values(itenary[iteLen - 1])[0].length === 0) {
+        if (iteLen > 0 && itenary[iteLen - 1].places.length === 0) {
             let newItenary = itenary.slice(0, iteLen - 1);
-            if (
-                iteLen > 1 &&
-                Object.keys(itenary[iteLen - 2])[0] === e.target.value
-            ) {
+            if (iteLen > 1 && itenary[iteLen - 2].cityName === e.target.value) {
                 setItem(itenary[iteLen - 2]);
                 setItenary(newItenary);
             } else {
@@ -80,7 +78,7 @@ const Itenary = () => {
         if (citySelected?.length === 0 || e.target.value === "Add a place")
             return;
         let newItem = Object.assign({}, item);
-        newItem[citySelected].push(e.target.value);
+        newItem.places.push({ itemName: e.target.value });
 
         console.log("item: ", newItem);
         let newItenary = itenary.slice(0, -1);
@@ -150,23 +148,24 @@ const Itenary = () => {
                     <div className="flex flex-col justify-center items-center">
                         {itenary.length > 0 &&
                             itenary.map((itenaryItem) => {
+                                console.log("itenaryItem: ", itenaryItem);
                                 return (
                                     <div className="flex flex-col w-full">
                                         <h1 className="text-4xl ml-2 flex w-full justify-start items-center">
-                                            📍 {Object.keys(itenaryItem)[0]}
+                                            📍 {itenaryItem.cityName}
                                         </h1>
-                                        {itenaryItem[
-                                            Object.keys(itenaryItem)[0]
-                                        ].map((itenaryPlace) => {
-                                            return (
-                                                <p className="flex w-full justify-center items-center">
-                                                    {itenaryPlace}
-                                                </p>
-                                            );
-                                        })}
+                                        {itenaryItem.places.map(
+                                            (itenaryPlace) => {
+                                                return (
+                                                    <p className="flex w-full justify-center items-center">
+                                                        {itenaryPlace.itemName}
+                                                    </p>
+                                                );
+                                            }
+                                        )}
                                         {citySelected.length > 0 &&
                                             citySelected ===
-                                                Object.keys(itenaryItem)[0] && (
+                                                itenaryItem.cityName && (
                                                 <div className="flex justify-center items-center">
                                                     <select
                                                         onChange={(e) =>
