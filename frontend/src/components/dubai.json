@@ -1,0 +1,29 @@
+[
+    {
+        "src":"img-1.jpeg",
+        "text":"Explore the tallest tower in the world, the Burj Khalifa",
+        "label":"Burj Khalifa"
+    },
+    {
+        "src":"img-2.jpeg",
+              "text":"Dubai Mall, also known as the home of the Dubai shopping festival, is one of the world's largest shopping malls in UAE",
+              "label":"Dubai Mall"
+    },
+    {
+        "src":"img-3.jpeg",
+              "text":"At Global Village, we bring the world to Dubai with the best entertainment, shopping, dining experiences, and attractions designed to keep you enthralled all season long! ",
+              "label":"Global Village"
+    },
+    {
+        "src":"img-4.jpeg",
+              "text":"The iconic manmade island of Palm Jumeirah is famous for its trademark palm tree shape and houses waterfront bungalows, plush boutiques, luxury hotels and upscale restaurants.",
+              "label":"Palm Jumeirah"
+    }
+]
+
+
+
+  
+
+
+
