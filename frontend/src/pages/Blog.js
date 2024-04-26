@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import BlogInfo from "../components/Blogs/BlogInfo";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([

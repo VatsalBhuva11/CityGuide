@@ -2,11 +2,13 @@ import mongoose from "mongoose";
 import { mongooseConfig } from "../config.js";
 import { User } from "../models/User.js";
 
-// mongoose.connect(mongooseConfig)
-// .then(con=>{
-//     // console.log(con.connections);
-//     console.log("MongoDB Connect Sucessfull");
-// }).catch(err=>console.log(err));
+mongoose
+    .connect(mongooseConfig)
+    .then((con) => {
+        // console.log(con.connections);
+        console.log("MongoDB Connect Sucessfull");
+    })
+    .catch((err) => console.log(err));
 
 export const createUser = async (req, res) => {
     try {

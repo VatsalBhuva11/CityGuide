@@ -117,7 +117,7 @@ const Register = () => {
             };
 
             const response = await axios.post(
-                "http://localhost:7001/api/auth/register",
+                "http://localhost:7000/api/auth/register",
                 requestBody
             );
             console.log("Response:", response.data);
@@ -149,7 +149,7 @@ const Register = () => {
             style={{ backgroundImage: `url(${image})` }}
         >
             <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-black rounded-xl mx-auto shadow-lg overflow-hidden  hover:opacity-85 opacity-60 mt-20">
+                <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-black rounded-xl mx-auto shadow-lg overflow-hidden  hover:opacity-85 opacity-60 mt-8">
                     <div
                         className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center"
                         style={{
@@ -165,7 +165,7 @@ const Register = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="w-full lg:w-1/2 py-16 px-12">
+                    <div className="w-full lg:w-1/2 py-4 pb-20 px-12">
                         <h2 className="text-3xl mb-4">Register</h2>
                         <p className="mb-4">
                             Create your account. It’s free and only take a

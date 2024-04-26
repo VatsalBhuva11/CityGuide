@@ -23,44 +23,46 @@ app.use(morgan("dev"));
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "OK" });
+    res.status(200).json({ message: "OK" });
 });
 app.use("/api", router);
 app.use("/api/blogs", blogRouter);
+
 const PORT = process.env.PORT || 7001;
-app.listen(PORT, function () {
-  wss.on("connection", (socket) => {
+wss.on("connection", (socket) => {
     console.log("a user connected");
     socket.on("message", async function (prompt) {
-      console.log("socket entered prompt: ", prompt);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        console.log("socket entered prompt: ", prompt);
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-      try {
-        prompt =
-          prompt +
-          ". Give answer only in plain text without any formatting like bold, underline, bullets points. For new line text, use a comma instead of newline";
-        const result = await model.generateContentStream(prompt);
-        console.log("Going to run");
-        for await (const chunk of result.stream) {
-          const chunkText = await chunk.text();
-          console.log(chunkText);
-          socket.emit("chat response", JSON.stringify({ text: chunkText }));
+        try {
+            prompt =
+                prompt +
+                ". Give answer only in plain text without any formatting like bold, underline, bullets points. For new line text, use a comma instead of newline";
+            const result = await model.generateContentStream(prompt);
+            console.log("Going to run");
+            for await (const chunk of result.stream) {
+                const chunkText = await chunk.text();
+                console.log(chunkText);
+                socket.emit(
+                    "chat response",
+                    JSON.stringify({ text: chunkText })
+                );
+            }
+        } catch (error) {
+            console.error("Error while streaming content:", error);
+            socket.send("chat error", JSON.stringify({ error: error.message }));
         }
-      } catch (error) {
-        console.error("Error while streaming content:", error);
-        socket.send("chat error", JSON.stringify({ error: error.message }));
-      }
 
-      console.log("========");
-      console.log("response done");
-      console.log("========");
+        console.log("========");
+        console.log("response done");
+        console.log("========");
     });
     socket.on("close", () => console.log("Client disconnected"));
-  });
 });
 
 server.listen(PORT, function () {
-  console.log(`Server is running on port ${PORT}! 🚀`);
+    console.log(`Server is running on port ${PORT}! 🚀`);
 });
 
 // wss.on("connection", function connection(ws) {
