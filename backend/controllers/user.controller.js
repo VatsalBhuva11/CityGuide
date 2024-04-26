@@ -23,6 +23,7 @@ export const createUser = async (req, res) => {
 
 export const findUserByUID = async (req, res) => {
     const { uid } = req.body; // Assuming UID is passed as a route parameter  
+    // console.log("INSIDE FIND USER BY UID"+uid)   
     try {
         const user = await User.findOne({ UID: uid });
         if (!user) {

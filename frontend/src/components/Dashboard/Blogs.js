@@ -3,7 +3,7 @@ import React from 'react';
 const DashBlogs = () => {
   return (
     <div>
-      my blogs
+      Redirecting you to blogs...
     </div>
   );
 }
