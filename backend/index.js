@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import router from "./routes/index.js";
 import morgan from "morgan";
+import blogRouter from "./routes/blogs.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import http from "http";
 import { pipeline } from "stream";
@@ -24,9 +25,10 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 app.get("/", (req, res) => {
     res.status(200).json({ message: "OK" });
 });
-app.use("/api", router);
-const PORT = process.env.PORT;
-
+app.use("/api",router);
+app.use("/api/blogs",blogRouter);
+const PORT = process.env.PORT || 7001;
+app.listen(PORT, function () {
 wss.on("connection", (socket) => {
     console.log("a user connected");
     socket.on("message", async function (prompt) {

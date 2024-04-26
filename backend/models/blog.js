@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose"
 
 const blogSchema = new mongoose.Schema({
   UID: {
@@ -25,14 +25,8 @@ const blogSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true
-  },
-  blogID: {
-    type: String,
-    required: true,
-    unique: true
   }
 });
 
-const Blog = mongoose.model('Blog', blogSchema);
+export const Blog = mongoose.model('Blog', blogSchema);
 
-module.exports = Blog;

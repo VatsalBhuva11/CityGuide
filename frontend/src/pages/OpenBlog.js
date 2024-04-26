@@ -28,7 +28,7 @@ const OpenBlog = () => {
           </header>
           <figure><img src={image} alt=""/>
           </figure>
-          <div className='text-field text-white text-lg'>{description}</div>
+          <div className='text-field text-white text-lg mt-10'>{description}</div>
       </article>
   </div>
 </main>
