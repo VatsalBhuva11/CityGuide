@@ -10,20 +10,25 @@ import { Link } from "react-router-dom";
 
 export function CardItem(props) {
   return (
-    <Card className="mt-6 w-96 m-10">
+    <div>
       <Link to={props.path}>
-        <CardHeader color="blue-gray" className="relative h-56">
+        <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
           <img
-            className="w-full"
+            className="absolute inset-0 h-full w-full object-cover"
             src={`images/${props.src}`}
-            alt="card-image"
+            alt="University of Southern California"
           />
-        </CardHeader>
-        <CardBody>
-          <Typography>{props.text}</Typography>
-        </CardBody>
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+
+          <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+            {props.label}
+          </div>
+        </article>
+        <p className="z-10 mt-3 text-l font-bold text-white text-center">
+          {props.text}
+        </p>
       </Link>
-    </Card>
+    </div>
   );
 }
 
