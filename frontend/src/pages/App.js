@@ -11,6 +11,7 @@ import Blog1 from "./Blog1";
 import Blog2 from "./Blog2";
 import Blog3 from "./Blog3";
 import Blog4 from "./Blog4";
+import Itenary from "./Itenary";
 
 function App() {
     return (
@@ -28,7 +29,7 @@ function App() {
                 <Route path="/blog/3" element={<Blog3 />}></Route>
                 <Route path="/blog/4" element={<Blog4 />}></Route>
                 <Route path="/newBlog" element={<NewBlog />}></Route>
-                <Route path="/user/itenary"></Route>
+                <Route path="/user/itenary" element=<Itenary />></Route>
             </Routes>
         </BrowserRouter>
     );

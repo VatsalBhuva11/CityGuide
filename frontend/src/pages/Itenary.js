@@ -80,21 +80,6 @@ const Itenary = () => {
                                 );
                             })}
                         </select>
-                        {citySelected.length > 0 && (
-                            <select
-                                onChange={(e) => addPlace(e)}
-                                className="w-full text-center text-white p-2 m-2 rounded-lg bg-slate-700"
-                            >
-                                <option>Add a place</option>
-                                {places[citySelected].map((place, index) => {
-                                    return (
-                                        <option key={index} value={place}>
-                                            {place}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        )}
                     </div>
                     <div className="flex justify-center gap-2 items-center">
                         <button
@@ -109,8 +94,8 @@ const Itenary = () => {
                             itenary.map((itenaryItem) => {
                                 return (
                                     <div className="flex flex-col w-full">
-                                        <h1 className="text-xl flex w-full justify-start items-center">
-                                            {Object.keys(itenaryItem)[0]}
+                                        <h1 className="text-4xl ml-2 flex w-full justify-start items-center">
+                                            📍 {Object.keys(itenaryItem)[0]}
                                         </h1>
                                         {itenaryItem[
                                             Object.keys(itenaryItem)[0]
@@ -121,6 +106,41 @@ const Itenary = () => {
                                                 </p>
                                             );
                                         })}
+                                        {citySelected.length > 0 &&
+                                            citySelected ===
+                                                Object.keys(itenaryItem)[0] && (
+                                                <div className="flex justify-center items-center">
+                                                    <select
+                                                        onChange={(e) =>
+                                                            addPlace(e)
+                                                        }
+                                                        className="w-1/2 text-center text-white p-2 m-2 rounded-lg bg-slate-700"
+                                                        value={"Add a place"}
+                                                    >
+                                                        <option>
+                                                            Add a place
+                                                        </option>
+                                                        {places[
+                                                            citySelected
+                                                        ].map(
+                                                            (place, index) => {
+                                                                return (
+                                                                    <option
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                        value={
+                                                                            place
+                                                                        }
+                                                                    >
+                                                                        {place}
+                                                                    </option>
+                                                                );
+                                                            }
+                                                        )}
+                                                    </select>
+                                                </div>
+                                            )}
                                     </div>
                                 );
                             })}
