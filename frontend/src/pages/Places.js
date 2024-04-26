@@ -1,17 +1,21 @@
 import React from "react";
-import CardItem from "../components/CardItem";
+import PlaceCardItem from "../components/PlaceCardItem";
 import dubai from "../components/dubai.json";
+import abd from "../components/abuDhabi.json";
+import { useSearchParams } from "react-router-dom";
 
 const Places = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const city = searchParams.get("city");
   return (
-    <div className="bg-gray-900">
+    <>
       <h1 className="text-6xl text-center text-red-950 my-5">Places</h1>
-      <div className="flex flex-row flex-wrap basis-1">
-        {dubai.map((value) => (
-          <CardItem src={value.src} text={value.text} />
+      <div class="flex px-3 py-3 flex-wrap">
+        {(city == "abd" ? abd : dubai).map((value) => (
+          <PlaceCardItem src={value.src} text={value.text} label={value.label} />
         ))}
       </div>
-    </ div>
+    </>
   );
 };
 
