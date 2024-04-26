@@ -1,9 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import BlogInfo from '../components/Blogs/BlogInfo';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
+
+const [blogs,setBlogs] = useState([
+  { 
+    id: 5 ,
+    blogtime: '14 days ago',
+    title: 'How to quickly deploy a static website',
+    description: 'Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.',
+    author: 'Jese Leos'
+  }
+]);
+
   return (
     <div className='relative bottom-0'>
       <section class="bg-white dark:bg-gray-900 min-h-screen">
@@ -17,7 +28,7 @@ const Blog = () => {
       </div> 
       <div class="grid gap-8 lg:grid-cols-2">
       {/* this place we need to map all the fetched data */}
-      <BlogInfo/>
+      {blogs.map( blog => (<BlogInfo key={blog.id} blog={blog}/>))};
       </div>  
   </div>
 </section>
