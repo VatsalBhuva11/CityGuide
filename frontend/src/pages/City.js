@@ -12,6 +12,7 @@ const City = () => {
         ))}
     </ div>
   );
+
 };
 
 export default City;
