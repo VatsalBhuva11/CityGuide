@@ -2,7 +2,7 @@ import React from 'react';
 import BlogInfo from '../components/Blogs/BlogInfo';
 import Footer from '../components/Footer';
 
-const Blog = () => {
+const Blog2 = () => {
   return (
     <div className='relative bottom-0'>
       <section class="bg-white dark:bg-gray-900 min-h-screen">
@@ -17,10 +17,9 @@ const Blog = () => {
       </div>  
   </div>
 </section>
-{/* <Footer/> */}
+<Footer/>
     </div>
   );
 }
 
-export default Blog;
-
+export default Blog2;

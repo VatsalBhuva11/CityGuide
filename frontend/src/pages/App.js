@@ -20,6 +20,10 @@ function App() {
         <Route path="/city" element={<City />} />
         <Route path="/blogs" element={<Blog />}></Route>
         <Route path="/blog" element={<OpenBlog />}></Route>
+        {/* <Route path="/blog/1" element={<OpenBlog />}></Route>
+        <Route path="/blog/2" element={<OpenBlog />}></Route>
+        <Route path="/blog/3" element={<OpenBlog />}></Route>
+        <Route path="/blog/4" element={<OpenBlog />}></Route> */}
         <Route path="/newBlog" element={<NewBlog/>}></Route>
         <Route path="/user/itenary" ></Route>
       </Routes>
