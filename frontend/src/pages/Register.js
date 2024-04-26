@@ -117,7 +117,7 @@ const Register = () => {
             };
 
             const response = await axios.post(
-                "http://localhost:7000/api/auth/register",
+                "http://localhost:7001/api/auth/register",
                 requestBody
             );
             console.log("Response:", response.data);

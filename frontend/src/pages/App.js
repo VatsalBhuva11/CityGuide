@@ -28,7 +28,7 @@ function App() {
     function getResponse() {
         setMessages([]);
         if (input.length > 0) {
-            const rws = io("http://localhost:7000");
+            const rws = io("http://localhost:7001");
             console.log("Sending prompt: ", input);
             rws.emit("message", input);
             console.log("Prompt sent.");

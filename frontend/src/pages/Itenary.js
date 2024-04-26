@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const cities = ["Dubai", "Abu Dhabi"];
 const places = {
@@ -12,35 +12,36 @@ const Itenary = () => {
     const [item, setItem] = useState({});
     const [citySelected, setCitySelected] = useState("");
     const token = localStorage.getItem("token");
-    const [itenaryResult, setResult]=useState([
+    const [itenaryResult, setResult] = useState([
         {
-            "cityName": "'Dubai'",
-            "places": [
-                { "itemName": "'Burj Khalifa'" },
-                { "itemName": "'Dubai Mall'" },
-                { "itemName": "'Global Village'" },
-                { "itemName": "'Palm Jumeirah'" }
-            ]
-        },
-        {
-            "cityName": "'Abu Dhabi'",
-            "places": [
-                { "itemName": "'Ferrari World'" },
-                { "itemName": "'Yas Waterworld'" },
-                { "itemName": "'Marina Mall'" }
-            ]
-        }
-    ]);
-
-    function itenaryResultFilled(iti){
-        const final=[{
             cityName: "'Dubai'",
             places: [
-            ]
-        }]
-        iti.map((obj)=>{
-            obj.Dubai.map((value)=>final[0].places.push({ itemName: value }))
-        })
+                { itemName: "'Burj Khalifa'" },
+                { itemName: "'Dubai Mall'" },
+                { itemName: "'Global Village'" },
+                { itemName: "'Palm Jumeirah'" },
+            ],
+        },
+        {
+            cityName: "'Abu Dhabi'",
+            places: [
+                { itemName: "'Ferrari World'" },
+                { itemName: "'Yas Waterworld'" },
+                { itemName: "'Marina Mall'" },
+            ],
+        },
+    ]);
+
+    function itenaryResultFilled(iti) {
+        const final = [
+            {
+                cityName: "'Dubai'",
+                places: [],
+            },
+        ];
+        iti.map((obj) => {
+            obj.Dubai.map((value) => final[0].places.push({ itemName: value }));
+        });
         setResult(final);
     }
 
@@ -89,24 +90,30 @@ const Itenary = () => {
     }
 
     function addItem() {
-            itenaryResultFilled(itenary);
-            (async()=>{
-              let response;
-              response=await axios.post('http://localhost:7001/api/auth/authenticate', {
-              }, {
-                headers: {
-                  'Authorization': `Bearer ${token}`
+        itenaryResultFilled(itenary);
+        (async () => {
+            let response;
+            response = await axios.post(
+                "http://localhost:7001/api/auth/authenticate",
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
                 }
-              })
-              console.log(response.data.uidd)
-              const requestBody={
+            );
+            console.log(response.data.uidd);
+            const requestBody = {
                 UID: `${response.data.uidd}`,
-                items:[...itenaryResult]
-              }
-              const response2=await axios.post('http://localhost:7001/api/itenary/createItenary',requestBody)
-            //   setUser({...response2.data}); 
-              // console.log("user2:"+user2.firstName);
-            })()
+                items: [...itenaryResult],
+            };
+            const response2 = await axios.post(
+                "http://localhost:7001/api/itenary/createItenary",
+                requestBody
+            );
+            //   setUser({...response2.data});
+            // console.log("user2:"+user2.firstName);
+        })();
         return;
     }
 
