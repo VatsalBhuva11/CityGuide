@@ -2,8 +2,10 @@ import React,{useState} from 'react';
 import BlogInfo from '../components/Blogs/BlogInfo';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import {useState} from 'react'
 
 const Blog = () => {
+<<<<<<< Updated upstream
 
 const [blogs,setBlogs] = useState([
   { 
@@ -15,6 +17,9 @@ const [blogs,setBlogs] = useState([
   }
 ]);
 
+=======
+  
+>>>>>>> Stashed changes
   return (
     <div className='relative bottom-0'>
       <section class="bg-white dark:bg-gray-900 min-h-screen">

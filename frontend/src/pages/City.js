@@ -1,22 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CardItem from "../components/CardItem";
 import cityData from "../components/cityData.json";
 
 const City = () => {
-  console.log();
-  useEffect(() => {
-    //Fetching data from db
-  }, []);
+<<<<<<< Updated upstream
+  console.log(cityData);
+=======
+  // console.log("HEllo");
+  // useEffect(() => {
+  //   //Fetching data from db
+  // }, []);
+>>>>>>> Stashed changes
   return (
     <div className="bg-gray-900">
       <h1 className="text-6xl text-center my-5 text-red-950">Cities</h1>
-      <div className="flex flex-row flex-wrap basis-1">
         {cityData.map((value) => (
-          <CardItem src={value.src} text={value.text} path={value.path} />
+<<<<<<< Updated upstream
+          <CardItem src={value.src} text={value.text} path={value.path} label={value.label} />
+=======
+          <CardItem key={value.text} src={value.src} text={value.text} path={value.path} />
+>>>>>>> Stashed changes
         ))}
-      </div>
     </ div>
   );
+
 };
 
 export default City;

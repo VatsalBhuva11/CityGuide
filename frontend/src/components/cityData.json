@@ -1,15 +1,15 @@
-[
+    [
     {
-        "src":"dubai.jpeg",
+        "src":"Dubai.jpg",
         "text":"Dubai, UAE",
         "label":"Middle East",
-        "path":"/places"
+        "path":"/places?city=dubai"
     },
     {
-        "src":"abu-dhabi.jpeg",
+        "src":"Abu-Dhabi.jpg",
         "text":"Abu Dhabi, UAE",
         "label":"Middle East",
-        "path":"Europe"
+        "path":"/places?city=abd"
     }
 ]
 
