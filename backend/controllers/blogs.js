@@ -1,5 +1,6 @@
 import { Blog } from "../models/blog.js";
 import axios from "axios";
+import mongoose from "mongoose";
 
 export const getAllBlogs = async (req, res) => {
     const blogs = await Blog.find({});
@@ -7,9 +8,17 @@ export const getAllBlogs = async (req, res) => {
 };
 
 export const getBlog = async (req, res) => {
-    const { id } = req.params;
-    const blog = await Blog.findById(id).exec();
-    res.status(200).json({ blog });
+    try {
+        const { id } = req.params;
+        const blog = await Blog.findById(id);
+        if (blog) return res.status(200).json({ blog });
+        return res.status(404).json({ message: "Blog not found" });
+    } catch (err) {
+        console.log(err);
+        return res
+            .status(500)
+            .json({ message: "Error occurred while fetching blog" });
+    }
 };
 
 export const createBlog = async (req, res) => {
@@ -36,11 +45,20 @@ export const createBlog = async (req, res) => {
             requestBody
         );
         console.log(response2.data);
+        const UID = response2.data.UID;
+        const author = response2.data.firstName + " " + response2.data.surname;
+        const newBlog = await Blog.create({
+            title,
+            city,
+            description,
+            UID,
+            author,
+        });
+        res.status(201).json({ blog: newBlog });
     } catch (error) {
         console.log(error);
+        res.status(500).json({
+            message: "Error occurred while creating new blog.",
+        });
     }
-    const UID = response2.data.UID;
-    const author = response2.data.firstName + " " + response2.data.surname;
-    const newBlog = Blog.create({ title, city, description, UID, author });
-    res.status(201).json({ newBlog });
 };

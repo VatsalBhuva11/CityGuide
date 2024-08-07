@@ -77,6 +77,9 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
+            if (localStorage.getItem("token")) {
+                localStorage.removeItem("token");
+            }
             const requestBody = {
                 user: {
                     email,

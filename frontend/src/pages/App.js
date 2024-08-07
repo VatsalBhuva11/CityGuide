@@ -7,10 +7,6 @@ import Places from "./Places";
 import Blog from "./Blog";
 import OpenBlog from "./OpenBlog";
 import NewBlog from "./NewBlog";
-import Blog1 from "./Blog1";
-import Blog2 from "./Blog2";
-import Blog3 from "./Blog3";
-import Blog4 from "./Blog4";
 import Itenary from "./Itenary";
 import DraftItenary from "./DraftItenary";
 import chatSvg from "../components/chat.svg";
@@ -43,11 +39,6 @@ function App() {
             });
         }
 
-        // rws.onmessage = (message) => {
-        //     const data = JSON.parse(message.data);
-        //     console.log("data: ", data);
-        //     setMessages((prev) => [...prev, data.text]);
-        // };
         setInput("");
     }
 
@@ -63,10 +54,6 @@ function App() {
                     <Route path="/city" element={<City />} />
                     <Route path="/blogs" element={<Blog />}></Route>
                     <Route path="/blog/:id" element={<OpenBlog />}></Route>
-                    <Route path="/blog/1" element={<Blog1 />}></Route>
-                    <Route path="/blog/2" element={<Blog2 />}></Route>
-                    <Route path="/blog/3" element={<Blog3 />}></Route>
-                    <Route path="/blog/4" element={<Blog4 />}></Route>
                     <Route path="/newBlog" element={<NewBlog />}></Route>
                     <Route path="/user/itenary" element={<Itenary />} />
                     <Route

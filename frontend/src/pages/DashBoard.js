@@ -34,8 +34,8 @@ const DashBoard = () => {
                 "http://localhost:7001/api/user/getUser",
                 requestBody
             );
+            console.log("line 37:", response2.data);
             setUser({ ...response2.data });
-            // console.log("user2:"+user2.firstName);
         })();
     }, [token]);
     const [clicket, setClicket] = useState(1);

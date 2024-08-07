@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogInfo from "../components/Blogs/BlogInfo";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
-    const [blogs, setBlogs] = useState([
-        {
-            id: 5,
-            blogtime: "14 days ago",
-            title: "How to quickly deploy a static website",
-            description:
-                "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.",
-            author: "Jese Leos",
-        },
-    ]);
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:7001/api/blog")
+            .then((res) => res.json())
+            .then((res) => {
+                console.log("RES: ", res);
+                setBlogs(res.blogs);
+            });
+    }, []);
 
     return (
         <div className="relative bottom-0">
@@ -39,7 +39,7 @@ const Blog = () => {
                     <div class="grid gap-8 lg:grid-cols-2">
                         {/* this place we need to map all the fetched data */}
                         {blogs.map((blog) => (
-                            <BlogInfo key={blog.id} blog={blog} />
+                            <BlogInfo key={blog._id} blog={blog} />
                         ))}
                         ;
                     </div>

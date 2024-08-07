@@ -12,7 +12,7 @@ const Itenary = () => {
     const [item, setItem] = useState({});
     const [citySelected, setCitySelected] = useState("");
     const token = localStorage.getItem("token");
-    
+
     function checkCityClicked(e) {
         if (e.target.value === "Add a city") return;
         setCitySelected(e.target.value); //mark current city
