@@ -108,18 +108,8 @@ const OpenBlog = () => {
             }
         );
         console.log("COMMENT RES: ", res);
-        const currComm = {
-            comment,
-            author: data.author,
-            date: Date.now(),
-            likes: 0,
-            dislikes: 0,
-            likedBy: [],
-            dislikedBy: [],
-            UID: jwtDecode(localStorage.getItem("token")).user_id,
-        };
         if (res.data.status === "ok") {
-            setComments([currComm, ...comments]);
+            setComments([res.data.data, ...comments]);
         }
         setComment("");
     }
@@ -352,6 +342,7 @@ const OpenBlog = () => {
                                     class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                                     placeholder="Write a comment..."
                                     onChange={(e) => setComment(e.target.value)}
+                                    value={comment}
                                     required
                                 ></textarea>
                             </div>
@@ -399,8 +390,8 @@ const OpenBlog = () => {
                                             }}
                                         >
                                             {comment.likedBy?.some(
-                                                (commObj) =>
-                                                    commObj.UID ===
+                                                (commId) =>
+                                                    commId ===
                                                     jwtDecode(
                                                         localStorage.getItem(
                                                             "token"
@@ -453,8 +444,8 @@ const OpenBlog = () => {
                                             }}
                                         >
                                             {comment.dislikedBy?.some(
-                                                (commObj) =>
-                                                    commObj.UID ===
+                                                (commId) =>
+                                                    commId ===
                                                     jwtDecode(
                                                         localStorage.getItem(
                                                             "token"

@@ -40,6 +40,7 @@ export const commentOnBlog = async (req, res) => {
             return res.status(200).json({
                 status: "ok",
                 message: "Successfully added comment on blog!",
+                data: newComment,
             });
         } else {
             res.status(404).json({
