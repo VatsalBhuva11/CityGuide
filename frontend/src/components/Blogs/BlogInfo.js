@@ -33,7 +33,7 @@ function BlogInfo(blog) {
                     <div class="flex items-center space-x-4">
                         <img
                             class="w-7 h-7 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                            src={`https://ui-avatars.com/api/?name=${author}`}
                             alt="Jese Leos avatar"
                         />
                         <span class="font-medium dark:text-white">

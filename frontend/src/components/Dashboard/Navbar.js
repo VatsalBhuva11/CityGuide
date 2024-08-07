@@ -8,6 +8,7 @@ const DashNavbar = ({ user }) => {
             window.location.replace("/");
         }
     }
+    const author = user.firstName + " " + user.surname;
     return (
         <div className=" bg-white flex fixed right-0 left-0 top-0 justify-between items-center text-3xl z-50 text-purple-900 border-solid border-yellow-700 border-b-2">
             <div
@@ -26,7 +27,10 @@ const DashNavbar = ({ user }) => {
                     LOGOUT
                 </button>
                 <div className=" w-10 object-contain ">
-                    <img src={image} className="rounded-full"></img>
+                    <img
+                        src={`https://ui-avatars.com/api/?name=${author}`}
+                        className="rounded-full"
+                    ></img>
                 </div>
                 <div className="mx-2 cursor-pointer">{user.firstName}</div>
             </div>
