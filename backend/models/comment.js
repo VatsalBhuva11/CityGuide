@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const blogSchema = new mongoose.Schema({
+const commentSchema = new mongoose.Schema({
     UID: {
         type: String,
         required: true,
@@ -9,21 +9,13 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    comment: {
+        type: String,
+        required: true,
+    },
     date: {
         type: Date,
         default: Date.now,
-    },
-    title: {
-        type: String,
-        required: true,
-    },
-    city: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
     },
     likes: {
         type: Number,
@@ -41,12 +33,6 @@ const blogSchema = new mongoose.Schema({
         type: Array,
         default: [],
     },
-    comments: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment",
-        },
-    ],
 });
 
-export const Blog = mongoose.model("Blog", blogSchema);
+export const Comment = mongoose.model("Comment", commentSchema);
